@@ -1,0 +1,93 @@
+.navbar {
+  background: #fff !important;
+  padding: 0 30px !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.nav-link {
+  color: rgba(21, 187, 30, 0.637) !important;
+  height: 60px !important;
+  font-size: 18px !important;
+}
+
+.nav-item a:hover {
+  color: rgba(84, 158, 243, 0.986) !important;
+}
+
+.navbar-brand {
+  color: rgb(78, 233, 137) !important;
+  font-size: 25px !important;
+  text-transform: uppercase !important;
+}
+
+.nav-brand a {
+  color: rgb(5, 82, 92);
+  text-decoration: none;
+}
+/*Solutions*/
+.solutions {
+  background-color: #004d99 !important;
+  color: #f5f5f5 !important;
+}
+
+footer {
+  background-color: springgreen;
+}
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+  }
+
+  nav ul {
+    margin: 20px 0;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav a {
+    margin-right: 0;
+  }
+
+  .nav-brand {
+    margin: 20px 0;
+  }
+}
+body {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.morris-hover {
+  position: absolute;
+  z-index: 1000;
+}
+
+.morris-hover.morris-default-style {
+  border-radius: 10px;
+  padding: 6px;
+  color: #666;
+  background: rgba(255, 255, 255, 0.8);
+  border: solid 2px rgba(230, 230, 230, 0.8);
+  font-family: sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+.morris-hover.morris-default-style .morris-hover-row-label {
+  font-weight: bold;
+  margin: 0.25em 0;
+}
+
+.morris-hover.morris-default-style .morris-hover-point {
+  white-space: nowrap;
+  margin: 0.1em 0;
+}
+
+svg {
+  width: 100%;
+}
