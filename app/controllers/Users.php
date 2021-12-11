@@ -53,7 +53,7 @@ class Users extends Controller{
             if(empty($data['password'])){
                 $data['password_err'] = 'Enter your password';
             }elseif(strlen($data['password']) < 6){
-                $data['password_err'] = 'Password must be atleast six characters';
+                $data['password_err'] = 'Password must be at least six characters';
             }
 
             //validate confirm password
@@ -68,7 +68,7 @@ class Users extends Controller{
 
             //make sure error are empty
             if(empty($data['first_name_err']) && empty($data['last_name_err']) && empty($data['email_err']) && empty($data['phone_err']) && empty($data['password_err']) && empty($data['confirmPassword_err'])){
-                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+                //$data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
                 if($this->userModel->register($data)){
                     flash('register_success', 'you are registerd you can login now');
                     redirect('users/login');
@@ -159,6 +159,19 @@ class Users extends Controller{
         $_SESSION['first_name'] = $user->first_name;
         $_SESSION['email'] = $user->email;
         redirect('dashboards/index');
+    }
+
+    //Display profile page
+    public function profile(){
+       //init data f f
+       $data = [
+        'email' => '',
+        'password' => '',
+        'email_err' => '',
+        'password_err' => ''
+    ];
+    //load view
+    $this->view('users/profile', $data);
     }
 
     //logout and destroy user session

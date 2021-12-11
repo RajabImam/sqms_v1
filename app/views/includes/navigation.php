@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 80px;">
   <div class="container-fluid">
     <a class="navbar-brand" href="<?php echo URLROOT; ?>">
     <img src="<?php echo URLROOT; ?>/images/logo-sqms.png" alt="" width="95" height="90" class="d-inline-block align-text-top">
@@ -10,16 +10,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT; ?>">Home</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT; ?>"><b>Home</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">About</a>
+          <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about"><b>About</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo URLROOT; ?>/pages/services">Services</a>
+          <a class="nav-link" href="<?php echo URLROOT; ?>/pages/services"><b>Services</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo URLROOT; ?>/pages/contact">Contact</a>
+          <a class="nav-link" href="<?php echo URLROOT; ?>/pages/contact"><b>Contact</b></a>
         </li>
       </ul>
 
@@ -29,14 +29,14 @@
               <a class="nav-link" href="<?php echo URLROOT; ?>/dashboards">Welcome <?php echo $_SESSION['first_name'] ;?></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo URLROOT; ?>/users/logout">Logout</a>
+              <a class="nav-link" href="<?php echo URLROOT; ?>/users/logout"><b>Logout</b></a>
             </li>
           <?php else : ?>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo URLROOT; ?>/users/register">Create Account</a>
+              <a class="nav-link" href="<?php echo URLROOT; ?>/users/register"><b>Create Account</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo URLROOT; ?>/users/login">Login</a>
+              <a class="nav-link" href="<?php echo URLROOT; ?>/users/login"><b>Login</b></a>
             </li>
           </ul>
         <?php endif ;?>

@@ -40,18 +40,27 @@ class User {
     }
 
     public function login($email, $password){
-        $this->db->query('SELECT * FROM user where email = :email');
+        //$this->db->query('SELECT * FROM user where email = :email');
+        $this->db->query('SELECT * FROM user where email = :email AND password = :password');
         $this->db->bind(':email', $email);
+        $this->db->bind(':password', $password);
        
         $row = $this->db->single();
 
-        $hash_password = $row->password;
+        if(!empty($row)){
+            return $row;
+        }
+        else{
+            return false;
+        }
 
-        if(password_verify($password, $hash_password)){
+        //$hash_password = $row->password;
+
+       /* if(password_verify($password, $hash_password)){
             return $row;
         }else{
             return false;
-        }
+        }*/
     }
 
     public function getUserById($id){
