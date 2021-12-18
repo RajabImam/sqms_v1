@@ -1,5 +1,7 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
-
+<section >
+        <img  src="<?php echo URLROOT; ?>/images/home1.png"width="100%" >
+  </section>
 <!--Home--->
 <section class="container mb-5">
     <div class="row mt-3">
@@ -25,7 +27,7 @@ Detects and reports sleep abnormalities to the users
 
     <!--Call to action-->
 
-    <section class="container-fluid bg-primary py-5">
+    <section class="container-fluid bg-success py-5">
     <div class="container text-center w-50">
       <h1 class="text-white py-1">Dream Guardian</h1>
       <hr/>

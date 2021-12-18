@@ -36,7 +36,7 @@
 
                 <div class="mb-3 form-group">
                     <label>Age</label>
-                    <input type="text" name="age" class="form-control" value="<?php echo $data['age'] ?>">
+                    <input type="date" name="age" class="form-control" value="<?php echo $data['age'] ?>">
                     <span class="text-danger"><?php echo $data['age_err']; ?> </span>
                 </div>
 

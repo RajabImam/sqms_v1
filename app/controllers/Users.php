@@ -3,8 +3,13 @@ class Users extends Controller{
     public function __construct()
     {
         $this->userModel = $this->model('User');
+        $this->petModel = $this->model('Pet');
+        $this->profileModel = $this->model('Profile');
+        $this->subscriptionModel = $this->model('Subscription');
+ 
     }
 
+    
     public function register(){
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
            // process form
@@ -158,21 +163,22 @@ class Users extends Controller{
         $_SESSION['id'] = $user->id;
         $_SESSION['first_name'] = $user->first_name;
         $_SESSION['email'] = $user->email;
-        redirect('dashboards/index');
+
+        $data = $this->petModel->getPetsCount();
+        
+        redirect('dashboards/index', $data);
     }
 
     //Display profile page
-    public function profile(){
-       //init data f f
+    /*public function profile($id = null) {
+       //init data 
+       $user = $this->userModel->getUserById($id);
        $data = [
-        'email' => '',
-        'password' => '',
-        'email_err' => '',
-        'password_err' => ''
+        'user' => $user
     ];
     //load view
     $this->view('users/profile', $data);
-    }
+    }*/
 
     //logout and destroy user session
     public function logout(){

@@ -20,7 +20,7 @@
                 <button type="submit" class="btn btn-primary">LOGIN</button>
             </div>
             
-            <h6 class="mb-5">Don't have an account? <a href="signup.php"> Create Account </a></h6>
+            <h6 class="mb-5">Don't have an account? <a href="<?php echo URLROOT; ?>/users/register"> Create Account </a></h6>
           </form>
         </center>
 </div>
