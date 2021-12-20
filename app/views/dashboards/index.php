@@ -15,7 +15,7 @@
             </div>
             <div class="text-end pt-1">
               <p class="text-sm mb-0 text-capitalize">Profile</p>
-              <h4 class="mb-0">Tobias Odion</h4>
+              <h4 class="mb-0"><?php echo $_SESSION['first_name'] ;?></h4>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
             </div>
             <div class="text-end pt-1">
               <p class="text-sm mb-0 text-capitalize">My Pet</p>
-              <h4 class="mb-0">3</h4>
+              <h4 class="mb-0"><?php //echo $data ;?></h4>
             </div>
           </div>
         </div>

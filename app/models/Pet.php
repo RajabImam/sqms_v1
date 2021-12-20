@@ -14,6 +14,14 @@ class Pet {
         return $result;
     }
 
+    public function getPetsCount(){
+        $this->db->query('SELECT COUNT(*) as count from pets where user_id = :id');
+        $this->db->bind(':id', $_SESSION['id']);
+        $result = $this->db->resultSetArray();
+        
+        return $result;
+    }
+
     public function getPetById($id){
         $this->db->query('SELECT * FROM pets WHERE id = :id');
         $this->db->bind(':id', $id);
