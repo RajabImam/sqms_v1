@@ -6,26 +6,17 @@
         <?php require APPROOT . '/views/includes/menu.php'; ?>
     </div>
     <div class="col-9">
-
+    <h1 class="text-success">Update Pet Info</h1>
         <p>
             <a href="<?php echo URLROOT; ?>/pets/index" class="btn btn-success">Back to My Pets</a>
         </p>
-
-
-        <h1 class="text-success">Update Pet Information</h1>
-
         <div>
 
             <form action="<?php echo URLROOT; ?>/pets/update" method="post" enctype="multipart/form-data">
-                <!--<?php if ($product['image']) : ?>
-                <img src="<?php echo $product['image'] ?>" class="product-img-view">
-            <?php endif; ?>
-            <div class="form-group">
-                <label>Product Image</label><br>
-                <input type="file" name="image">
-            </div>-->
+               
+            
                 <div class="mb-3 form-group">
-                    <input type="hidden" name="id" class="form-control" value="<?php echo $data['id'] ?>">
+                    <input type="hidden" name="device_code" class="form-control" value="<?php echo $data['device_code'] ?>">
                 </div>
 
                 <div class="mb-3 form-group">
@@ -34,10 +25,19 @@
                     <span class="text-danger"><?php echo $data['name_err']; ?> </span>
                 </div>
 
-                <div class="mb-3 form-group">
+               <!-- <div class="mb-3 form-group">
                     <label>Classification</label>
                     <input type="text" name="classification" class="form-control" value="<?php echo $data['classification'] ?>">
                     <span class="text-danger"><?php echo $data['classification_err']; ?> </span>
+                </div>-->
+
+                <div class="mb-3 form-group">
+                <select class="form-select" name="classification" value="<?php echo $data['classification'] ?>" aria-label="Default select example">
+                <option value="Dog">Dog</option>
+                <option value="Cat">Cat</option>
+                <option value="Bird">Bird</option>
+                <option value="Others">Others</option>
+                </select>
                 </div>
 
                 <div class="mb-3 form-group">

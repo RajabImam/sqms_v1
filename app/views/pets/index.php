@@ -17,7 +17,7 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <!--<th scope="col">Image</th> -->
+                    <th scope="col">Device Code</th> 
                     <th scope="col">Name</th>
                     <th scope="col">Classification</th>
                     <th scope="col">Age</th>
@@ -28,19 +28,23 @@
                 <?php foreach ($data as $i => $pet) { ?>
                     <tr>
                         <th scope="row"><?php echo $i + 1 ?></th>
-                       <!-- <td>
-                            <?php if ($pet['image']) : ?>
-                                <img src="/<?php echo $product['image'] ?>" alt="<?php echo $pet['title'] ?>" class="product-img">
-                            <?php endif; ?>
-                        </td> -->
+                       <td><?php echo $pet['device_code'] ?></td>
                         <td><?php echo $pet['name'] ?></td>
                         <td><?php echo $pet['classification'] ?></td>
-                        <td><?php echo $pet['age'] ?></td>
+                        <!--<td><?php 
+                       /* 
+                        $origin = $pet['age'];
+                        $target = new date('Y-m-d');
+                        $interval = $origin->diff($target);
+                        echo $interval->format('%m month');
+                        */
+                        ?></td>-->
+                        <td><?php  echo $pet['age'] ?></td>
                         <td style="width: 236px;">
-                            <a href="<?php echo URLROOT; ?>/pets/report?id=<?php echo $pet['id'] ?>" class="btn btn-sm btn-outline-success">Sleep Report</a>
-                            <a href="<?php echo URLROOT; ?>/pets/update?id=<?php echo $pet['id'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
+                            <a href="<?php echo URLROOT; ?>/pets/report?device_code=<?php echo $pet['device_code'] ?>" class="btn btn-sm btn-outline-success">Sleep Report</a>
+                            <a href="<?php echo URLROOT; ?>/pets/update?device_code=<?php echo $pet['device_code'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
                             <form method="post" action="<?php echo URLROOT; ?>/pets/delete" style="display: inline-block">
-                                <input type="hidden" name="id" value="<?php echo $pet['id'] ?>" />
+                                <input type="hidden" name="id" value="<?php echo $pet['device_code'] ?>" />
                                 <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
                             </form>
                         </td>

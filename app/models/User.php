@@ -8,12 +8,13 @@ class User {
 
     //register new user
     public function register($data){
-        $this->db->query('INSERT INTO user (first_name, last_name, email, phone, password, created_on) VALUES (:first_name, :last_name, :email, :phone, :password, NOW())');
+        $this->db->query('INSERT INTO user (first_name, last_name, email, phone, password, created_on, subscription, start_date, end_date) VALUES (:first_name, :last_name, :email, :phone, :password, NOW(), :subscription, NOW(), DATE_ADD(NOW(), INTERVAL 1 YEAR))');
         $this->db->bind(':first_name', $data['first_name']);
         $this->db->bind(':last_name', $data['last_name']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':phone', $data['phone']);
         $this->db->bind(':password', $data['password']);
+        $this->db->bind(':subscription', 'FREE');
         //$created_on = date('Y-m-d H:i:s');
         //$this->db->bind(':created_on', $data['created_on']);
 
