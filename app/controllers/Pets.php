@@ -25,15 +25,22 @@ class Pets extends Controller
             // process form
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = [
+                'device_code' => trim($_POST['device_code']),
                 'name' => trim($_POST['name']),
                 'classification' => trim($_POST['classification']),
                 'age' => trim($_POST['age']),
+                'device_code_err' => '',
                 'name_err' => '',
                 'classification_err' => '',
                 'age_err' => ''
             ];
 
-            //valide name
+            //validate device_code
+            if (empty($data['device_code'])) {
+                $data['device_code_err'] = "Enter pet's device code";
+            }
+
+            //validate pets name
             if (empty($data['name'])) {
                 $data['name_err'] = "Enter pet's name";
             }
@@ -52,7 +59,7 @@ class Pets extends Controller
             if (empty($data['name_err']) && empty($data['classification_err']) && empty($data['age_err'])) {
                 //$data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
                 if ($this->petModel->register($data)) {
-                    flash('register_success', 'you are registerd you can login now');
+                    flash('register_success', 'Pet details added');
                     redirect('pets/index');
                 }
             } else {
@@ -61,9 +68,11 @@ class Pets extends Controller
         } else {
             //init data
             $data = [
+                'device_code' => '',
                 'name' => '',
                 'classification' => '',
                 'age' => '',
+                'device_code_err' => '',
                 'name_err' => '',
                 'classification_err' => '',
                 'age_err' => ''
@@ -79,29 +88,37 @@ class Pets extends Controller
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $id = $_POST['id'] ?? null;
+            $device_code = $_POST['device_code'] ?? null;
 
-            if (!$id) {
+            if (!$device_code) {
                 $this->index();
                 exit;
             }
             // process form
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = [
+                'device_code' => trim($_POST['device_code']),
                 'name' => trim($_POST['name']),
                 'classification' => trim($_POST['classification']),
                 'age' => trim($_POST['age']),
+                'device_code_err' => '',
                 'name_err' => '',
                 'classification_err' => '',
                 'age_err' => ''
             ];
 
-            //valide name
+
+             //validate device code
+             if (empty($data['device_code'])) {
+                $data['device_code_err'] = "Enter pet's device code";
+            }
+
+            //validate name
             if (empty($data['name'])) {
                 $data['name_err'] = "Enter pet's name";
             }
 
-            //valide classification
+            //validate classification
             if (empty($data['classification'])) {
                 $data['classification_err'] = "Enter pet's Classification";
             }
@@ -122,21 +139,22 @@ class Pets extends Controller
                 $this->view('pets/register', $data);
             }
         } else {
-            $id = $_GET['id'] ?? null;
+            $device_code = $_GET['device_code'] ?? null;
 
-            if (!$id) {
+            if (!$device_code) {
                 $this->index();
                 exit;
             }
 
-            $result = $this->petModel->getPetById($id);
+            $result = $this->petModel->getPetById($device_code);
 
             //init data
             $data = [
-                'id' => $result->id,
+                'device_code' => $result->device_code,
                 'name' => $result->name,
                 'classification' => $result->classification,
                 'age' => $result->age,
+                'device_code_err' => '',
                 'name_err' => '',
                 'classification_err' => '',
                 'age_err' => ''
@@ -149,14 +167,14 @@ class Pets extends Controller
 
     public function delete()
     {
-        $id = $_POST['id'] ?? null;
+        $device_code = $_POST['device_code'] ?? null;
 
-        if (!$id) {
+        if (!$device_code) {
             $this->index();
             exit;
         }
 
-        $result = $this->petModel->deletePet($id);
+        $result = $this->petModel->deletePet($device_code);
         $this->index();
     }
 

@@ -7,7 +7,7 @@ class Subscription {
     }
 
     public function getSubscriptions(){
-        $this->db->query('SELECT * from plan where user_id = :id');
+        $this->db->query('SELECT * from user where id = :id');
         $this->db->bind(':id', $_SESSION['id']);
         $result = $this->db->resultSetArray();
 
@@ -15,7 +15,7 @@ class Subscription {
     }
 
     public function getSubById($id){
-        $this->db->query('SELECT * FROM plan WHERE user_id = :id');
+        $this->db->query('SELECT * FROM user WHERE id = :id');
         $this->db->bind(':id', $id);
 
         $row = $this->db->single();
@@ -23,6 +23,7 @@ class Subscription {
         return $row;
     }
 
+    /*
     //create new subscription
     public function register($data){
         $this->db->query('INSERT INTO plan (type, start_date, end_date, created_on, user_id) VALUES (:type, :start_date, :end_date, now(), :user_id)');
@@ -37,13 +38,11 @@ class Subscription {
         }else{
             return false;
         }
-    }
+    } */
 
     public function update($data, $id){
-        $this->db->query('UPDATE plan SET type = :type, start_date = :start_date, end_date = :end_date WHERE id = :id');
-        $this->db->bind(':type', $data['type']);
-        $this->db->bind(':start_date', $data['start_date']);
-        $this->db->bind(':end_date', $data['end_date']);
+        $this->db->query('UPDATE user SET subscription = :subscription, start_date = NOW(), end_date = DATE_ADD(NOW(), INTERVAL 1 YEAR)) WHERE id = :id');
+        $this->db->bind(':subscription', $data['subscription']);
         $this->db->bind(':id', $id);
 
         if($this->db->execute()){
@@ -54,19 +53,7 @@ class Subscription {
         }
     }
 
-    //Delete pet by id
-    public function deleteSub($id){  
-        var_dump($id);
-        $this->db->query('DELETE FROM plan WHERE id = :id');
-        $this->db->bind(':id', $id);
-       
-        if($this->db->execute()){
-            return true;
-            //exit;
-        }else{
-            return false;
-        }
-    }
+   
 
    
 

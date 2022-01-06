@@ -18,6 +18,7 @@ class Subscriptions extends Controller
         $this->view('subscriptions/index', $data);
     }
 
+    /*
     public function register()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -70,8 +71,9 @@ class Subscriptions extends Controller
             $this->view('subscriptions/register', $data);
         }
     }
+    */
 
-    //update pet details
+    //update subscription
     public function update()
     {
 
@@ -86,31 +88,18 @@ class Subscriptions extends Controller
             // process form
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = [
-                'type' => trim($_POST['type']),
-                'start_date' => trim($_POST['start_date']),
-                'end_date' => trim($_POST['end_date']),
-                'type_err' => '',
-                'start_date_err' => '',
-                'end_date_err' => ''
+                'subscription' => trim($_POST['subscription']),
+                'subscription_err' => ''
             ];
 
-            //validation type
-            if (empty($data['type'])) {
-                $data['type_err'] = "Enter sub type";
+            //validation sub
+            if (empty($data['subscription'])) {
+                $data['subscription_err'] = "Enter sub";
             }
 
-            //valid start date
-            if (empty($data['start_date'])) {
-                $data['start_date_err'] = "Enter sub start date";
-            }
-
-            //validate age
-            if (empty($data['end_date'])) {
-                $data['end_date_err'] = "Enter sub end date";
-            }
-
+            
             //make sure error are empty
-            if (empty($data['type_err']) && empty($data['start_date_err']) && empty($data['end_date_err'])) {
+            if (empty($data['subscription_err'])) {
                 if ($this->subscriptionModel->update($data, $id)) {
                     flash('update_success', 'sub updated successfully');
                     redirect('subscriptions/index');
@@ -131,10 +120,10 @@ class Subscriptions extends Controller
             //init data
             $data = [
                 'id' => $result->id,
-                'type' => $result->type,
+                'subscription' => $result->subscription,
                 'start_date' => $result->start_date,
                 'end_date' => $result->end_date,
-                'type_err' => '',
+                'subscription_err' => '',
                 'start_date_err' => '',
                 'end_date_err' => ''
             ];
@@ -144,7 +133,7 @@ class Subscriptions extends Controller
         }
     }
 
-    public function delete()
+ /*   public function delete()
     {
         $id = $_POST['id'] ?? null;
 
@@ -155,7 +144,7 @@ class Subscriptions extends Controller
 
         $result = $this->subscriptionModel->deleteSub($id);
         $this->index();
-    }
+    }*/
 
     public function report()
     {

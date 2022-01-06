@@ -22,18 +22,19 @@ class Pet {
         return $result;
     }
 
-    public function getPetById($id){
-        $this->db->query('SELECT * FROM pets WHERE id = :id');
-        $this->db->bind(':id', $id);
+    public function getPetById($device_code){
+        $this->db->query('SELECT * FROM pets WHERE device_code = :device_code');
+        $this->db->bind(':device_code', $device_code);
 
         $row = $this->db->single();
 
         return $row;
     }
 
-    //register new user
+    //register new pet
     public function register($data){
-        $this->db->query('INSERT INTO pets (name, classification, age, user_id) VALUES (:name, :classification, :age, :user_id)');
+        $this->db->query('INSERT INTO pets (device_code, name, classification, age, user_id) VALUES (:device_code, :name, :classification, :age, :user_id)');
+        $this->db->bind(':device_code', $data['device_code']);
         $this->db->bind(':name', $data['name']);
         $this->db->bind(':classification', $data['classification']);
         $this->db->bind(':age', $data['age']);
@@ -47,12 +48,12 @@ class Pet {
         }
     }
 
-    public function update($data, $id){
-        $this->db->query('UPDATE pets SET name = :name, classification = :classification, age = :age WHERE id = :id');
+    public function update($data, $device_code){
+        $this->db->query('UPDATE pets SET name = :name, classification = :classification, age = :age WHERE device_code = :device_code');
         $this->db->bind(':name', $data['name']);
         $this->db->bind(':classification', $data['classification']);
         $this->db->bind(':age', $data['age']);
-        $this->db->bind(':id', $id);
+        $this->db->bind(':device_code', $device_code);
 
         if($this->db->execute()){
             return true;
@@ -62,11 +63,11 @@ class Pet {
         }
     }
 
-    //Delete pet by id
-    public function deletePet($id){  
-        var_dump($id);
-        $this->db->query('DELETE FROM pets WHERE id = :id');
-        $this->db->bind(':id', $id);
+    //Delete pet by device_code
+    public function deletePet($device_code){  
+        var_dump($device_code);
+        $this->db->query('DELETE FROM pets WHERE device_code = :device_code');
+        $this->db->bind(':device_code', $device_code);
        
         if($this->db->execute()){
             return true;
