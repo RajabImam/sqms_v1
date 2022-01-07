@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 80px;">
   <div class="container-fluid">
     <a class="navbar-brand" href="<?php echo URLROOT; ?>">
-    <img src="<?php echo URLROOT; ?>/images/logo-sqms.png" alt="" width="95" height="90" class="d-inline-block align-text-top">
+    <img src="<?php echo URLROOT; ?>/images/logo-sqms.png" alt="logo" width="95" height="90" class="d-inline-block align-text-top">
    <!-- Dream Guardian -->   
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

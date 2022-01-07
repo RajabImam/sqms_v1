@@ -1,11 +1,9 @@
-<footer class="text-center text-lg-start footer-bg fixed-bottom" style="height: 50px;">
+<footer class="fixed-bottom" style="height: 25px;">
   <!-- Copyright -->
-  <div class="text-center p-4">
-    © 2021 Copyright. All right reserved.
-    <a class="text-reset fw-bold" href="#"> Dream Guardian </a>
-  </div>
+   <span>© 2021 Copyright. All right reserved.<a class="text-reset fw-bold" href="#"> Dream Guardian </a></span> 
   <!-- Copyright -->
 </footer>
+
 <script src="<?php echo URLROOT; ?>/js/script.js"></script>
 <script src="<?php echo URLROOT; ?>/js/jquery"></script>
 <script src="<?php echo URLROOT; ?>/js/bootstrap.min.js"></script>

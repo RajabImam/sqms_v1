@@ -1,3 +1,77 @@
+.signup-div{
+  background-color: aliceblue;
+  padding: 10px 50px 10px 50px;
+  width: 60%;
+  margin: 50px auto 50px auto;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.login-div{
+  margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  background-color: aliceblue;
+  text-align: center;
+  padding: 60px 40px 10px 40px;
+  width: 50%;
+  border-radius: 20px;
+}
+
+.login-title{
+  margin-bottom: 25px;
+}
+
+.signup-title{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.profile-card{
+    text-align: center;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: aliceblue;
+    padding: 20px 40px 20px 40px;
+    width: 50%;
+    border-radius: 20px;
+}
+
+.dash-button{
+  background-color: aliceblue;
+    padding: 20px 20px 20px 20px;
+    border-radius: 20px;
+  transition: 0.3s;
+}
+
+.dash-button:hover{
+  box-shadow: 0 0 3px black;
+  margin-top: -10px;
+}
+
+.menu-div{
+  margin-top: 50px;
+}
+
+.profile-img{
+  margin-bottom: 20px;
+}
+
+.row{
+  margin-top: 50px;
+}
+
+.dash-link{
+  text-decoration: 0;
+}
+
+.dashboard-graph{
+  width:80%;
+  margin:0px auto 10px auto;
+  text-align: center;
+}
 .navbar {
   background: #fff !important;
   padding: 0 30px !important;
@@ -32,6 +106,7 @@
 
 footer {
   background-color: springgreen;
+  text-align: center;
 }
 footer a {
   text-decoration: none;

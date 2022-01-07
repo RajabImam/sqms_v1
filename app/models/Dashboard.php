@@ -7,7 +7,18 @@ class Dashboard {
         $this->db = new Database;
     }
 
-    public function getDashboards(){
+    public function getDashboards($userId){
+
+        /*$this->db->query('select (SELECT count(*) from pets where user_id = :userid) as petCount, 
+                            u.id as userId, p.type as planType from user as u 
+                            inner join plan as p on u.id = :userid');
+
+        $this->db->bind(':userid', $userId);
+
+        $result = $this->db->resultSet();
+
+        return $result;*/
+
         // $this->db->query('SELECT *,
         //                     posts.id as postId,
         //                     user.id as userId,

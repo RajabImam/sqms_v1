@@ -163,10 +163,8 @@ class Users extends Controller{
         $_SESSION['id'] = $user->id;
         $_SESSION['first_name'] = $user->first_name;
         $_SESSION['email'] = $user->email;
-
-        $data = $this->petModel->getPetsCount();
         
-        redirect('dashboards/index', $data);
+        redirect('dashboards/index');
     }
 
     //Display profile page

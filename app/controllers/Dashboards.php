@@ -13,12 +13,19 @@ class Dashboards extends Controller{
 
     public function index(){
 
-        $dashboards = $this->dashboardModel->getDashboards();
-        $data = [
-            'dashboards' => $dashboards
+        $id = $_SESSION['id'];
+        $dashboards = $this->dashboardModel->getDashboards($id);
+
+        //$dashboard = $dashboards[0];
+        
+        /*$data = [
+            'pet_count' => $dashboard->petCount,
+            'plan' => $dashboard->planType
         ];
 
-        $this->view('dashboards/index', $data);
+        $this->view('dashboards/index', $data);*/
+
+        $this->view('dashboards/index');
     }
 
     //add new post
