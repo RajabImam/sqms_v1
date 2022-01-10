@@ -1,7 +1,7 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
-<section >
-        <img  src="<?php echo URLROOT; ?>/images/home1.png"width="100%" >
-  </section>
+<section class="d-none d-lg-block">
+        <img  src="<?php echo URLROOT; ?>/images/home1.png" width="100%" >
+</section>
 <!--Home--->
 <section class="container mb-5">
     <div class="row mt-3">

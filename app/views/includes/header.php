@@ -13,7 +13,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script src="<?php echo URLROOT; ?>/js/script.js"></script>
-<script src="<?php echo URLROOT; ?>/js/jquery"></script>
+<!--<script src="<?php echo URLROOT; ?>/js/jquery"></script>-->
 <script src="<?php echo URLROOT; ?>/js/bootstrap.min.js"></script>
 <title><?php echo SITENAME; ?></title>
 </head>

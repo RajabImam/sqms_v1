@@ -1,4 +1,4 @@
-.signup-div{
+.signup-div {
   background-color: aliceblue;
   padding: 10px 50px 10px 50px;
   width: 60%;
@@ -7,11 +7,11 @@
   border-radius: 20px;
 }
 
-.login-div{
+.login-div {
   margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
   background-color: aliceblue;
   text-align: center;
   padding: 60px 40px 10px 40px;
@@ -19,57 +19,57 @@
   border-radius: 20px;
 }
 
-.login-title{
+.login-title {
   margin-bottom: 25px;
 }
 
-.signup-title{
+.signup-title {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-.profile-card{
-    text-align: center;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: aliceblue;
-    padding: 20px 40px 20px 40px;
-    width: 50%;
-    border-radius: 20px;
+.profile-card {
+  text-align: center;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: aliceblue;
+  padding: 20px 40px 20px 40px;
+  width: 50%;
+  border-radius: 20px;
 }
 
-.dash-button{
+.dash-button {
   background-color: aliceblue;
-    padding: 20px 20px 20px 20px;
-    border-radius: 20px;
+  padding: 20px 20px 20px 20px;
+  border-radius: 20px;
   transition: 0.3s;
 }
 
-.dash-button:hover{
+.dash-button:hover {
   box-shadow: 0 0 3px black;
   margin-top: -10px;
 }
 
-.menu-div{
+.menu-div {
   margin-top: 50px;
 }
 
-.profile-img{
+.profile-img {
   margin-bottom: 20px;
 }
 
-.row{
+.row {
   margin-top: 50px;
 }
 
-.dash-link{
+.dash-link {
   text-decoration: 0;
 }
 
-.dashboard-graph{
-  width:80%;
-  margin:0px auto 10px auto;
+.dashboard-graph {
+  width: 80%;
+  margin: 0px auto 10px auto;
   text-align: center;
 }
 .navbar {
@@ -114,15 +114,21 @@ footer a {
 }
 
 @media (max-width: 768px) {
-  nav {
+  .navbar-nav {
+    background-color: aliceblue !important;
+    display: block !important;
+    margin: -30px !important;
+    font-size: x-small !important;
+  }
+  /*nav {
     flex-direction: column;
     height: auto;
+    
   }
 
   nav ul {
     margin: 20px 0;
     flex-direction: column;
-    text-align: center;
   }
 
   nav a {
@@ -131,7 +137,7 @@ footer a {
 
   .nav-brand {
     margin: 20px 0;
-  }
+  }*/
 }
 body {
   margin: 0px !important;
