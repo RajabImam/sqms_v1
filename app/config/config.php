@@ -1,9 +1,15 @@
 <?php
   // DB Params
+  /** Development
   define('DB_HOST', 'localhost');
   define('DB_USER', 'root');
-  define('DB_PASS', 'Reason@2010');
-  define('DB_NAME', 'sqms');
+  define('DB_PASS', '######');
+  define('DB_NAME', 'sqms'); */
+  /**Production */
+  define('DB_HOST', 'eu-cdbr-west-02.cleardb.net');
+  define('DB_USER', 'b24261ecdd80d8');
+  define('DB_PASS', '65f315b9');
+  define('DB_NAME', 'heroku_bfbb328a96000d1');
 
   // App Root
   define('APPROOT', dirname(dirname(__FILE__)));
