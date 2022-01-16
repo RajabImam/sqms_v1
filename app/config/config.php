@@ -8,7 +8,8 @@
   // App Root
   define('APPROOT', dirname(dirname(__FILE__)));
   // URL Root
-  define('URLROOT', 'http://localhost/sqms');
+  //define('URLROOT', 'http://localhost/sqms');
+  define('URLROOT', 'https://sqms.herokuapp.com/');
   //Reporting/Analytics API base URL
   define('BASEURL', 'http://localhost:3000');
   // Site Name
