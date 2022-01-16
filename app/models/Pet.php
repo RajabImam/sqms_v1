@@ -65,7 +65,7 @@ class Pet {
 
     //Delete pet by device_code
     public function deletePet($device_code){  
-        var_dump($device_code);
+       
         $this->db->query('DELETE FROM pets WHERE device_code = :device_code');
         $this->db->bind(':device_code', $device_code);
        

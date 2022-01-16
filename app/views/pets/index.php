@@ -20,7 +20,7 @@
                     <th scope="col">Device Code</th> 
                     <th scope="col">Name</th>
                     <th scope="col">Classification</th>
-                    <th scope="col">Age</th>
+                    <th scope="col">Age(months)</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -39,12 +39,19 @@
                         echo $interval->format('%m month');
                         */
                         ?></td>-->
-                        <td><?php  echo $pet['age'] ?></td>
+                        <td><?php 
+                        $dob = $pet['age'] . " 00:00:00";
+                        $d1 = new DateTime($dob);
+                        $d2 = new DateTime('NOW');
+                        $interval = $d1->diff($d2);
+                        $dob_months = $interval->m;
+                        echo  $dob_months  ?>
+                        </td>
                         <td style="width: 236px;">
                             <a href="<?php echo URLROOT; ?>/pets/report?device_code=<?php echo $pet['device_code'] ?>" class="btn btn-sm btn-outline-success">Sleep Report</a>
                             <a href="<?php echo URLROOT; ?>/pets/update?device_code=<?php echo $pet['device_code'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
                             <form method="post" action="<?php echo URLROOT; ?>/pets/delete" style="display: inline-block">
-                                <input type="hidden" name="id" value="<?php echo $pet['device_code'] ?>" />
+                                <input type="hidden" name="device_code" value="<?php echo $pet['device_code'] ?>" />
                                 <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
                             </form>
                         </td>

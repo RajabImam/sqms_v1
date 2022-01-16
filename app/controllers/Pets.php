@@ -168,7 +168,6 @@ class Pets extends Controller
     public function delete()
     {
         $device_code = $_POST['device_code'] ?? null;
-
         if (!$device_code) {
             $this->index();
             exit;

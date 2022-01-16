@@ -9,6 +9,8 @@
   define('APPROOT', dirname(dirname(__FILE__)));
   // URL Root
   define('URLROOT', 'http://localhost/sqms');
+  //Reporting/Analytics API base URL
+  define('BASEURL', 'http://localhost:3000');
   // Site Name
   define('SITENAME', 'Dream Guardian - Sleep Quality Monitoring System');
   // App Version

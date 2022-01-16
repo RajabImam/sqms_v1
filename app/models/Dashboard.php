@@ -9,15 +9,12 @@ class Dashboard {
 
     public function getDashboards($userId){
 
-        /*$this->db->query('select (SELECT count(*) from pets where user_id = :userid) as petCount, 
-                            u.id as userId, p.type as planType from user as u 
-                            inner join plan as p on u.id = :userid');
+        $this->db->query('SELECT * , (SELECT count(*) FROM pets WHERE pets.user_id = :userid) AS pet_count 
+                        FROM user WHERE id = :userid');
 
         $this->db->bind(':userid', $userId);
-
-        $result = $this->db->resultSet();
-
-        return $result;*/
+        $result = $this->db->resultSetArray();
+        return $result;
 
         // $this->db->query('SELECT *,
         //                     posts.id as postId,
