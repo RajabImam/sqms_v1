@@ -2,10 +2,10 @@
 
 <div class="row container-fluid" style="margin-top: 20px;">
 
-    <div class="col-3">
+    <div class="col-lg-3 col-sm-6">
         <?php require APPROOT . '/views/includes/menu.php'; ?>
     </div>
-    <div class="col-9">
+    <div class="col-lg-9 col-sm-6">
         <?php $profile = $data[0]?>
         <h1 class="text-success">My Profile</h1>
 

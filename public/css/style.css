@@ -1,22 +1,19 @@
-<<<<<<< Updated upstream
-.signup-div {
-=======
-.graph-top-row{
+.graph-top-row {
   margin-top: 0px !important;
 }
 
-.sleep-score{
+.sleep-score {
   padding-top: 10px;
   font-size: 500%;
   font-weight: bolder;
   text-align: center;
 }
 
-.sleep-score-title{
+.sleep-score-title {
   text-align: center;
 }
 
-.sleep-score-card{
+.sleep-score-card {
   background-color: aliceblue;
   border-radius: 10px;
   padding: 10px 10px 10px 10px;
@@ -24,39 +21,37 @@
   width: 80%;
 }
 
-
 .menu-div a {
   color: white !important;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-   font-weight: 500;
-   text-transform: none;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 500;
+  text-transform: none;
 }
 
-.menu-div li{
+.menu-div li {
   background: rgb(19, 223, 121);
   margin-bottom: 2px;
 }
 
-.menu-div li:hover{
+.menu-div li:hover {
   background: darkgray;
 }
 
-.card p{
+.card p {
   margin-bottom: 0px;
 }
 
-.sub-btn{
+.sub-btn {
   margin-top: 10px;
 }
 
-.card{
-    margin-left: auto;
-    margin-right: auto;
+.card {
+  margin-left: auto;
+  margin-right: auto;
 }
-.signup-div{
->>>>>>> Stashed changes
+.signup-div {
   background-color: aliceblue;
   padding: 10px 50px 10px 50px;
   width: 60%;
@@ -111,7 +106,7 @@
 
 .menu-div {
   margin-top: 50px;
-  width: 90%
+  width: 90%;
 }
 
 .profile-img {

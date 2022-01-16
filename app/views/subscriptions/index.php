@@ -4,14 +4,14 @@
 
 <div class="row container-fluid" style="margin-top: 20px;">
 
-    <div class="col-3">
+    <div class="col-lg-3 col-sm-6">
         <?php require APPROOT . '/views/includes/menu.php'; ?>
     </div>
-    <div class="col-9">
+    <div class="col-lg-9 col-sm-6">
 
         <h1 class="text-success">My Subscription</h1>
 
-        <div>
+        <div class="table-responsive">
             <table class="table">
                 <thead>
                     <tr>
@@ -72,7 +72,7 @@
                             <p>3 pet</p>
                         </div>
                         <div class="sub-btn">
-                            <a href="#" class="btn btn-success">400 EUR</a>
+                            <a href="http://localhost/cashfree" target="_blank" class="btn btn-success">400 EUR</a>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                             <p>5 Pet</p>
                         </div>
                         <div class="sub-btn">
-                            <a href="#" class="btn btn-success">500 EUR</a>
+                            <a href="http://localhost/cashfree" target="_blank" class="btn btn-success">500 EUR</a>
                         </div>
 
                     </div>

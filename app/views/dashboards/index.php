@@ -1,11 +1,11 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
 
 <div class="row container-fluid" style="margin-top: 20px;">
-  <div class="col-3">
+  <div class="col-lg-3 col-sm-6">
     <?php require APPROOT . '/views/includes/menu.php'; ?>
   </div>
 
-  <div class="col-9">
+  <div class="col-lg-9 col-sm-6">
   <h1 class = "text-success">My Dashboard</h1>
     <div class="row">
       <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
