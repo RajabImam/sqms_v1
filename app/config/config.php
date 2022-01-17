@@ -18,7 +18,7 @@
   define('URLROOT', 'https://sqms.herokuapp.com');
   //Reporting/Analytics API base URL
   #define('BASEURL', 'http://localhost:3000');
-  define('BASEURL', 'http://172.16.230.245:3000');
+  define('BASEURL', 'https://wearable-device.herokuapp.com');
   // Site Name
   define('SITENAME', 'Dream Guardian - Sleep Quality Monitoring System');
   // App Version
