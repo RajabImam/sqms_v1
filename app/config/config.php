@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
   // DB Params
   /** Development
   define('DB_HOST', 'localhost');
